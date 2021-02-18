@@ -14,7 +14,6 @@ class MVCView: BaseView {
     
     override func setup() {
         super.setup()
-        
     }
     
     override func commitButtomClick() {
