@@ -1,14 +1,13 @@
 //
 //  AppDelegate.swift
-//  MVX-Demo
+//  MVP
 //
-//  Created by chenhui on 2020/12/9.
-//  Copyright © 2020 vhuichen. All rights reserved.
+//  Created by chenhui on 2021/2/19.
 //
 
 import UIKit
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 

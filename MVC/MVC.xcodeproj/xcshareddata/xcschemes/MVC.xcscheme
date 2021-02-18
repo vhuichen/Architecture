@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2E5E8AA8257FDF55000A6C02"
-               BuildableName = "iOS-Architecture.app"
-               BlueprintName = "iOS-Architecture"
-               ReferencedContainer = "container:iOS-Architecture.xcodeproj">
+               BuildableName = "MVC.app"
+               BlueprintName = "MVC"
+               ReferencedContainer = "container:MVC.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2E5E8ABE257FDF56000A6C02"
-               BuildableName = "iOS-ArchitectureTests.xctest"
-               BlueprintName = "iOS-ArchitectureTests"
-               ReferencedContainer = "container:iOS-Architecture.xcodeproj">
+               BuildableName = "MVCTests.xctest"
+               BlueprintName = "MVCTests"
+               ReferencedContainer = "container:MVC.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E5E8AA8257FDF55000A6C02"
-            BuildableName = "iOS-Architecture.app"
-            BlueprintName = "iOS-Architecture"
-            ReferencedContainer = "container:iOS-Architecture.xcodeproj">
+            BuildableName = "MVC.app"
+            BlueprintName = "MVC"
+            ReferencedContainer = "container:MVC.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E5E8AA8257FDF55000A6C02"
-            BuildableName = "iOS-Architecture.app"
-            BlueprintName = "iOS-Architecture"
-            ReferencedContainer = "container:iOS-Architecture.xcodeproj">
+            BuildableName = "MVC.app"
+            BlueprintName = "MVC"
+            ReferencedContainer = "container:MVC.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

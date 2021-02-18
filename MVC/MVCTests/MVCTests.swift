@@ -1,15 +1,15 @@
 //
-//  MVX_DemoTests.swift
-//  MVX-DemoTests
+//  MVC.swift
+//  MVCTests
 //
 //  Created by chenhui on 2020/12/9.
 //  Copyright © 2020 vhuichen. All rights reserved.
 //
 
 import XCTest
-@testable import MVX_Demo
+@testable import MVC
 
-class MVX_DemoTests: XCTestCase {
+class MVCTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
