@@ -18,6 +18,7 @@
 		2E5E8AC4257FDF56000A6C02 /* MVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5E8AC3257FDF56000A6C02 /* MVCTests.swift */; };
 		2E5E8AD5257FDFE2000A6C02 /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5E8AD2257FDFE2000A6C02 /* CommonModel.swift */; };
 		2E5E8AD6257FDFE2000A6C02 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5E8AD4257FDFE2000A6C02 /* BaseView.swift */; };
+		2E6195A025DF535C002ED5E2 /* MVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61959F25DF535C002ED5E2 /* MVCUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2E5E8AA8257FDF55000A6C02;
 			remoteInfo = "MVX-Demo";
+		};
+		2E61959725DF52C6002ED5E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E5E8AA1257FDF55000A6C02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E5E8AA8257FDF55000A6C02;
+			remoteInfo = MVC;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -46,6 +54,9 @@
 		2E5E8AC5257FDF56000A6C02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E5E8AD2257FDFE2000A6C02 /* CommonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
 		2E5E8AD4257FDFE2000A6C02 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		2E61959225DF52C6002ED5E2 /* MVCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E61959625DF52C6002ED5E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E61959F25DF535C002ED5E2 /* MVCUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVCUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +68,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2E5E8ABC257FDF56000A6C02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E61958F25DF52C6002ED5E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -96,6 +114,7 @@
 			children = (
 				2E5E8AAB257FDF55000A6C02 /* MVC */,
 				2E5E8AC2257FDF56000A6C02 /* MVCTests */,
+				2E61959325DF52C6002ED5E2 /* MVCUITests */,
 				2E5E8AAA257FDF55000A6C02 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +124,7 @@
 			children = (
 				2E5E8AA9257FDF55000A6C02 /* MVC.app */,
 				2E5E8ABF257FDF56000A6C02 /* MVCTests.xctest */,
+				2E61959225DF52C6002ED5E2 /* MVCUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +179,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		2E61959325DF52C6002ED5E2 /* MVCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2E61959F25DF535C002ED5E2 /* MVCUITests.swift */,
+				2E61959625DF52C6002ED5E2 /* Info.plist */,
+			);
+			path = MVCUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,13 +226,31 @@
 			productReference = 2E5E8ABF257FDF56000A6C02 /* MVCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2E61959125DF52C6002ED5E2 /* MVCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E61959925DF52C6002ED5E2 /* Build configuration list for PBXNativeTarget "MVCUITests" */;
+			buildPhases = (
+				2E61958E25DF52C6002ED5E2 /* Sources */,
+				2E61958F25DF52C6002ED5E2 /* Frameworks */,
+				2E61959025DF52C6002ED5E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E61959825DF52C6002ED5E2 /* PBXTargetDependency */,
+			);
+			name = MVCUITests;
+			productName = MVCUITests;
+			productReference = 2E61959225DF52C6002ED5E2 /* MVCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2E5E8AA1257FDF55000A6C02 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = vhuichen;
 				TargetAttributes = {
@@ -212,6 +259,10 @@
 					};
 					2E5E8ABE257FDF56000A6C02 = {
 						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 2E5E8AA8257FDF55000A6C02;
+					};
+					2E61959125DF52C6002ED5E2 = {
+						CreatedOnToolsVersion = 12.2;
 						TestTargetID = 2E5E8AA8257FDF55000A6C02;
 					};
 				};
@@ -231,6 +282,7 @@
 			targets = (
 				2E5E8AA8257FDF55000A6C02 /* MVC */,
 				2E5E8ABE257FDF56000A6C02 /* MVCTests */,
+				2E61959125DF52C6002ED5E2 /* MVCUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -247,6 +299,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2E5E8ABD257FDF56000A6C02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E61959025DF52C6002ED5E2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -278,6 +337,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2E61958E25DF52C6002ED5E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E6195A025DF535C002ED5E2 /* MVCUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -285,6 +352,11 @@
 			isa = PBXTargetDependency;
 			target = 2E5E8AA8257FDF55000A6C02 /* MVC */;
 			targetProxy = 2E5E8AC0257FDF56000A6C02 /* PBXContainerItemProxy */;
+		};
+		2E61959825DF52C6002ED5E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E5E8AA8257FDF55000A6C02 /* MVC */;
+			targetProxy = 2E61959725DF52C6002ED5E2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -504,6 +576,46 @@
 			};
 			name = Release;
 		};
+		2E61959A25DF52C6002ED5E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97NU232GB7;
+				INFOPLIST_FILE = MVCUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.followme.MVCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MVC;
+			};
+			name = Debug;
+		};
+		2E61959B25DF52C6002ED5E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97NU232GB7;
+				INFOPLIST_FILE = MVCUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.followme.MVCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MVC;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -530,6 +642,15 @@
 			buildConfigurations = (
 				2E5E8ACC257FDF56000A6C02 /* Debug */,
 				2E5E8ACD257FDF56000A6C02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E61959925DF52C6002ED5E2 /* Build configuration list for PBXNativeTarget "MVCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E61959A25DF52C6002ED5E2 /* Debug */,
+				2E61959B25DF52C6002ED5E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

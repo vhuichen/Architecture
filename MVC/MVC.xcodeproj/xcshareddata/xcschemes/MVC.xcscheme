@@ -38,6 +38,16 @@
                ReferencedContainer = "container:MVC.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2E61959125DF52C6002ED5E2"
+               BuildableName = "MVCUITests.xctest"
+               BlueprintName = "MVCUITests"
+               ReferencedContainer = "container:MVC.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
