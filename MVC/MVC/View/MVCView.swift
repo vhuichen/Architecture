@@ -1,17 +1,19 @@
 //
-//  BaseView.swift
+//  MVCView.swift
 //  MVX
 //
-//  Created by chenhui on 2020/12/8.
+//  Created by vchan on 2020/12/8.
 //  Copyright © 2020 vhuichen. All rights reserved.
 //
 
 import UIKit
 
-class BaseView: UIView {
+class MVCView: UIView {
     let titleLabel = UILabel()
     let textField = UITextField()
     let commitButtom = UIButton()
+    
+    var callback: ((String)->())?
     
     convenience init(title: String?) {
         self.init()
@@ -27,7 +29,7 @@ class BaseView: UIView {
         textField.frame = CGRect(x: 10, y: 30, width: 200, height: 30)
         commitButtom.frame = CGRect(x: 250, y: 30, width: 44, height: 30)
         
-        commitButtom.setTitle("提交", for: .normal)
+        commitButtom.setTitle("Submit", for: .normal)
         commitButtom.backgroundColor = .gray
         commitButtom.addTarget(self, action: #selector(commitButtomClick), for: .touchUpInside)
         
@@ -36,18 +38,11 @@ class BaseView: UIView {
         setup()
     }
     
-    
     func setup() {
         
     }
     
     @objc func commitButtomClick() {
-        
+        callback?(textField.text ?? "")
     }
-    
-    
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIScreen.main.bounds.size.width - 20, height: 70)
-    }
-
 }

@@ -2,7 +2,7 @@
 //  CommonModel.swift
 //  MVX
 //
-//  Created by chenhui on 2020/12/8.
+//  Created by vchan on 2020/12/8.
 //  Copyright © 2020 vhuichen. All rights reserved.
 //
 

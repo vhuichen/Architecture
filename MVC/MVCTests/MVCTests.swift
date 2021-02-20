@@ -2,7 +2,7 @@
 //  MVC.swift
 //  MVCTests
 //
-//  Created by chenhui on 2020/12/9.
+//  Created by vchan on 2020/12/9.
 //  Copyright © 2020 vhuichen. All rights reserved.
 //
 
