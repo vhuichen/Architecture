@@ -10,9 +10,5 @@ import Foundation
 
 class SecondMVCModel: NSObject {
     @objc dynamic var content: String?
-    
-    convenience init(_ aString: String) {
-        self.init()
-        content = aString
-    }
+    var title: String?
 }

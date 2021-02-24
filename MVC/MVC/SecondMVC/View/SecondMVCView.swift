@@ -19,12 +19,10 @@ class SecondMVCView: UIView {
     let valueLabel = UILabel()
     
     var delegate: SecondMVCViewDelegate?
-        
-    convenience init(title: String?) {
-        self.init()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         self.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
-        
-        titleLabel.text = title;
         
         addSubview(titleLabel)
         addSubview(textField)
@@ -41,6 +39,10 @@ class SecondMVCView: UIView {
         commitButtom.addTarget(self, action: #selector(commitButtomClick), for: .touchUpInside)
         
         textField.backgroundColor = .white
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     @objc func commitButtomClick() {

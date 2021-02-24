@@ -8,8 +8,8 @@
 
 import Foundation
 
-class SecondMVCController: NSObject, SecondMVCViewDelegate {
-    let mvcView = SecondMVCView(title: "SecondMVC");
+class SecondMVCController: NSObject {
+    let mvcView = SecondMVCView()
     var model: SecondMVCModel?
     
     override init() {
@@ -23,14 +23,19 @@ class SecondMVCController: NSObject, SecondMVCViewDelegate {
     func fetchData() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             //初始化 Model
-            self.model = SecondMVCModel("init value")
-            self.model?.addObserver(self, forKeyPath: "content", options: [.new, .initial], context: nil)
-            self.mvcView.valueLabel.text = self.model?.content
+            self.model = SecondMVCModel()
+            self.model?.title = "SecondMVC"
+            self.model?.content = "init value"
+            
+            self.setModel(self.model!)
         }
     }
     
-    func textFieldCommit(_ value: String?) {
-        self.model?.content = value
+    
+    func setModel(_ model: SecondMVCModel) {
+        model.addObserver(self, forKeyPath: "content", options: [.new, .initial], context: nil)
+        self.mvcView.titleLabel.text = model.title
+        self.mvcView.valueLabel.text = model.content
     }
     
     override func observeValue(forKeyPath keyPath: String?,
@@ -46,5 +51,11 @@ class SecondMVCController: NSObject, SecondMVCViewDelegate {
     
     deinit {
         self.model?.removeObserver(self, forKeyPath: "content")
+    }
+}
+
+extension SecondMVCController: SecondMVCViewDelegate {
+    func textFieldCommit(_ value: String?) {
+        self.model?.content = value
     }
 }
