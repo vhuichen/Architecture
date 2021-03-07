@@ -7,6 +7,9 @@
 但是，一旦这个页面变得稍微复杂一点， UIVieController 就会变得很”胖“。所以，当页面变得复杂时真的就不适合使用 MVC 了吗？并不是。最主要的原因是没有分模块，当页面比较复杂时，这个 UIVieController 更偏向与是一个负责展示页面的窗口（Screen）。   
 此时的框架应该是这样的 UIVieController 包含了多个 MVC，每个 MVC 负责自己的业务，UIVieController 再将这些 MVC 的 View 组合成一个页面
 
+MVC 是 C 持有 V 和 M
+MVP 是 V 持有 P ，P 持有 M。（这里的V，可以是 UIView 或者 UIViewController，P需要操作V，所以也会持有V）
+MVVM 是 V 持有 VM，VM 持有 M。（这里的V，可以是 UIView 或者 UIViewController）
 
 
 

@@ -16,11 +16,9 @@ class FirstMVCView: UIView {
     
     var callback: ((String)->())?
         
-    convenience init(title: String?) {
-        self.init()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         self.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
-        
-        titleLabel.text = title;
         
         addSubview(titleLabel)
         addSubview(textField)
@@ -39,12 +37,17 @@ class FirstMVCView: UIView {
         textField.backgroundColor = .white
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     @objc func commitButtomClick() {
         callback?(textField.text ?? "")
     }
     
     func setModel(_ model: FirstMVCModel) {
         valueLabel.text = model.content
+        titleLabel.text = model.title
         
         model.addObserver(self, forKeyPath: "content", options: [.new, .initial], context: nil)
     }
