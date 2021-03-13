@@ -11,9 +11,4 @@ import UIKit
 class FirstMVCModel: NSObject {
     @objc dynamic var content: String?
     var title: String?
-    
-    convenience init(_ title: String) {
-        self.init()
-        self.title = title
-    }
 }

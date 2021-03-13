@@ -21,39 +21,39 @@ class SecondMVCController: NSObject {
     }
     
     func fetchData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        //模拟网络获取Model
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
             //初始化 Model
-            self.model = SecondMVCModel()
-            self.model?.title = "SecondMVC"
-            self.model?.content = "init value"
+            let model = SecondMVCModel()
+            model.title = "SecondMVC"
+            model.content = "init value"
             
-            self.setModel(self.model!)
-        }
-    }
-    
-    
-    func setModel(_ model: SecondMVCModel) {
-        model.addObserver(self, forKeyPath: "content", options: [.new, .initial], context: nil)
-        self.mvcView.titleLabel.text = model.title
-        self.mvcView.valueLabel.text = model.content
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?,
-                               of object: Any?,
-                               change: [NSKeyValueChangeKey : Any]?,
-                               context: UnsafeMutableRawPointer?) {
-        if let _ = object as? SecondMVCModel, keyPath == "content" {
-            if let new = change?[NSKeyValueChangeKey.newKey] {
-                self.mvcView.valueLabel.text = new as? String
+            DispatchQueue.main.async {
+                self.viewSetModel(model)
             }
         }
     }
     
-    deinit {
-        self.model?.removeObserver(self, forKeyPath: "content")
+}
+
+//MARK: -
+extension SecondMVCController {
+    func viewSetModel(_ model: SecondMVCModel) {
+        self.kvoController.unobserve(self.model)
+        
+        self.model = model
+        self.mvcView.titleLabel.text = model.title
+        self.mvcView.valueLabel.text = model.content
+        
+        self.kvoController.observe(model, keyPath: "content", options: NSKeyValueObservingOptions.new) { [weak self] (observer, model, dict) in
+            if let new = dict[NSKeyValueChangeKey.newKey.rawValue] {
+                self?.mvcView.valueLabel.text = new as? String
+            }
+        }
     }
 }
 
+//MARK: - 
 extension SecondMVCController: SecondMVCViewDelegate {
     func textFieldCommit(_ value: String?) {
         self.model?.content = value

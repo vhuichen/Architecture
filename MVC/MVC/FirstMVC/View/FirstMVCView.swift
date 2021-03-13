@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import KVOController
 
+protocol FirstMVCViewDelegate {
+    func textFieldCommit(_ value: String?);
+}
+
+//MARK: -
 class FirstMVCView: UIView {
     let titleLabel = UILabel()
     let textField = UITextField()
     let commitButtom = UIButton()
     let valueLabel = UILabel()
     
-    var callback: ((String)->())?
-        
+    var delegate: FirstMVCViewDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
@@ -42,26 +48,23 @@ class FirstMVCView: UIView {
     }
     
     @objc func commitButtomClick() {
-        callback?(textField.text ?? "")
+        delegate?.textFieldCommit(textField.text)
     }
-    
+}
+
+//MARK: -
+extension FirstMVCView {
     func setModel(_ model: FirstMVCModel) {
         valueLabel.text = model.content
         titleLabel.text = model.title
         
-        model.addObserver(self, forKeyPath: "content", options: [.new, .initial], context: nil)
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?,
-                               of object: Any?,
-                               change: [NSKeyValueChangeKey : Any]?,
-                               context: UnsafeMutableRawPointer?) {
-        
-        if let _ = object as? FirstMVCModel, keyPath == "content" {
-            if let new = change?[NSKeyValueChangeKey.newKey] {
-                valueLabel.text = new as? String
+        self.kvoController.unobserveAll()
+        self.kvoController.observe(model,
+                                   keyPath: "content",
+                                   options: NSKeyValueObservingOptions.new){ [weak self] (observer, model, dict) in
+            if let new = dict[NSKeyValueChangeKey.newKey.rawValue] {
+                self?.valueLabel.text = new as? String
             }
         }
-        
     }
 }
