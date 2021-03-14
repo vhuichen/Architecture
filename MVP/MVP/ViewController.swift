@@ -18,8 +18,18 @@ class ViewController: UIViewController {
         
         firstMVPView.frame = CGRect(x: 10, y: 30, width: width, height: 100)
         view.addSubview(firstMVPView)
+        
+        let button = UIButton(frame: CGRect(x: 10, y: 150, width: 280, height: 44))
+        button.backgroundColor = UIColor.gray
+        button.setTitle("Jump To Second MVP Controller", for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(buttonClick), for: UIControl.Event.touchUpInside)
+        view.addSubview(button)
+        
     }
-
+    
+    @objc func buttonClick() {
+        self.present(SecondMVPController(), animated: true, completion: nil)
+    }
 
 }
 

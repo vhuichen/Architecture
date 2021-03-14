@@ -1,21 +1,26 @@
 //
-//  SecondMVCController.swift
-//  MVC
+//  SecondMVPPresenter.swift
+//  MVP
 //
-//  Created by vchan on 2021/2/21.
+//  Created by vchan on 2021/3/14.
 //  Copyright © 2021 vhuichen. All rights reserved.
 //
 
 import Foundation
+import KVOController
 
-class SecondMVCController: NSObject {
-    let mvcView = SecondMVCView()
-    var model: SecondMVCModel?
+protocol SecondMVPPresenterProtocol {
+    func textFieldCommit(_ value: String?)
+    func setView(_ view: SecondMVPViewProtocol)
+}
+
+class SecondMVPPresenter : NSObject {
+    var model: SecondMVPModel?
+    
+    weak var view: SecondMVPViewProtocol?
     
     override init() {
         super.init()
-        
-        mvcView.delegate = self
         
         fetchData()
     }
@@ -24,37 +29,38 @@ class SecondMVCController: NSObject {
         //模拟网络获取Model
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) {
             //初始化 Model
-            let model = SecondMVCModel()
-            model.title = "SecondMVC"
+            let model = SecondMVPModel()
+            model.title = "SecondMVP"
             model.content = "init value"
-            
             DispatchQueue.main.async {
                 self.viewSetModel(model)
             }
         }
     }
-    
 }
 
 //MARK: -
-extension SecondMVCController {
-    func viewSetModel(_ model: SecondMVCModel) {
+extension SecondMVPPresenter {
+    func viewSetModel(_ model: SecondMVPModel) {
         self.kvoController.unobserve(self.model)
         
         self.model = model
-        self.mvcView.titleLabel.text = model.title
-        self.mvcView.valueLabel.text = model.content
+        self.view?.setTitle(model.title)
+        self.view?.setContent(model.content)
         
         self.kvoController.observe(model, keyPath: "content", options: NSKeyValueObservingOptions.new) { [weak self] (observer, model, dict) in
             if let new = dict[NSKeyValueChangeKey.newKey.rawValue] {
-                self?.mvcView.valueLabel.text = new as? String
+                self?.view?.setContent(new as? String)
             }
         }
     }
 }
 
-//MARK: - 
-extension SecondMVCController: SecondMVCViewDelegate {
+extension SecondMVPPresenter : SecondMVPPresenterProtocol {
+    func setView(_ view: SecondMVPViewProtocol) {
+        self.view = view
+    }
+    
     func textFieldCommit(_ value: String?) {
         self.model?.content = value
     }

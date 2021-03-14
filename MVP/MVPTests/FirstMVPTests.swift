@@ -31,19 +31,13 @@ class FirstMVPTests: XCTestCase {
         let presenter = FirstMVPPresenter()
         presenter.setView(self)
         
-        let result = XCTWaiter(delegate: self).wait(for: [self.networkExpection!], timeout:  2)
-        if result == .timedOut {
-            print("超时")
-        }
+        wait(for: [self.networkExpection!], timeout: 2)
         
         networkExpection = expectation(description: "networkDownSuccess")
         
         presenter.textFieldCommit("aaa")
         
-        let result1 = XCTWaiter(delegate: self).wait(for: [self.networkExpection!], timeout:  1)
-        if result1 == .timedOut {
-            print("超时")
-        }
+        wait(for: [self.networkExpection!], timeout: 1)
         
         XCTAssert(self.contentString == "aaa")
     }

@@ -26,7 +26,7 @@ class FirstMVPPresenter : NSObject {
     
     func fetchData() {
         //模拟网络获取Model
-        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) {
             //初始化 Model
             let model = FirstMVPModel()
             model.title = "FirstMVP"

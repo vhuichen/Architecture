@@ -49,7 +49,6 @@
 		2E52BF0F25E2AA70008EB525 /* SecondMVCController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMVCController.swift; sourceTree = "<group>"; };
 		2E52BF1425E2AA82008EB525 /* SecondMVCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMVCView.swift; sourceTree = "<group>"; };
 		2E52BF1925E2AA8E008EB525 /* SecondMVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMVCModel.swift; sourceTree = "<group>"; };
-		2E52C79025FCC843008EB525 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		2E5E8AA9257FDF55000A6C02 /* MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E5E8AAC257FDF55000A6C02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E5E8AAE257FDF55000A6C02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,7 +197,6 @@
 				2E5E8AB5257FDF56000A6C02 /* Assets.xcassets */,
 				2E5E8AB7257FDF56000A6C02 /* LaunchScreen.storyboard */,
 				2E5E8ABA257FDF56000A6C02 /* Info.plist */,
-				2E52C79025FCC843008EB525 /* README.md */,
 			);
 			path = MVC;
 			sourceTree = "<group>";

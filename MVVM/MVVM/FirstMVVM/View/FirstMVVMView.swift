@@ -1,28 +1,24 @@
 //
-//  SecondMVCView.swift
-//  MVC
+//  FirstMVVMView.swift
+//  MVVM
 //
-//  Created by vchan on 2021/2/21.
+//  Created by vchan on 2021/3/14.
 //  Copyright © 2021 vhuichen. All rights reserved.
 //
 
 import UIKit
 
-protocol SecondMVCViewDelegate : NSObject {
-    func textFieldCommit(_ value: String?);
-}
-
 //MARK: -
-class SecondMVCView: UIView {
-    let titleLabel = UILabel()
-    let textField = UITextField()
-    let commitButtom = UIButton()
-    let valueLabel = UILabel()
+class FirstMVVMView: UIView {
+    private let titleLabel = UILabel()
+    private let textField = UITextField()
+    private let commitButtom = UIButton()
+    private let valueLabel = UILabel()
     
-    weak var delegate: SecondMVCViewDelegate?
+    private var viewModel: FirstMVVMViewModel?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init() {
+        super.init(frame: CGRect())
         setupUI()
     }
     
@@ -46,11 +42,23 @@ class SecondMVCView: UIView {
         textField.backgroundColor = .white
     }
     
+    func bindViewModel(_ viewModel: FirstMVVMViewModel) {
+        if let vm = self.viewModel {
+            self.titleLabel.unbind(vm, "contentString")
+        }
+        
+        self.viewModel = viewModel
+        self.titleLabel.text = viewModel.titleString
+        self.valueLabel.text = viewModel.contentString
+        
+        self.valueLabel.bind("text", viewModel, "contentString")
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     @objc func commitButtomClick() {
-        delegate?.textFieldCommit(textField.text)
+        viewModel?.textFieldCommit(textField.text)
     }
 }

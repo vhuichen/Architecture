@@ -5,10 +5,7 @@
 //  Created by vchan on 2021/3/14.
 //
 
-import Foundation
-
 import UIKit
-import KVOController
 
 protocol FirstMVPViewProtocol : NSObject {
     func setContent(_ content: String?)
@@ -26,7 +23,12 @@ class FirstMVPView: UIView {
     
     init(presenter: FirstMVPPresenterProtocol) {
         super.init(frame: CGRect())
-        
+        self.presenter = presenter
+        self.presenter?.setView(self)
+        setupUI()
+    }
+    
+    func setupUI() {
         self.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
         
         addSubview(titleLabel)
@@ -44,9 +46,6 @@ class FirstMVPView: UIView {
         commitButtom.addTarget(self, action: #selector(commitButtomClick), for: .touchUpInside)
         
         textField.backgroundColor = .white
-        
-        self.presenter = presenter
-        self.presenter?.setView(self)
     }
     
     required init?(coder: NSCoder) {

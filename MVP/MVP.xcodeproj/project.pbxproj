@@ -19,6 +19,10 @@
 		2EB6922E25FD1C6A005EDEDF /* FirstMVPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB6922D25FD1C6A005EDEDF /* FirstMVPModel.swift */; };
 		2EB6923325FD1E15005EDEDF /* FirstMVPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB6923225FD1E15005EDEDF /* FirstMVPView.swift */; };
 		2EB6923E25FD2048005EDEDF /* FirstMVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB6923D25FD2048005EDEDF /* FirstMVPPresenter.swift */; };
+		2EB6927825FE2938005EDEDF /* SecondMVPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB6927725FE2938005EDEDF /* SecondMVPModel.swift */; };
+		2EB6927D25FE297B005EDEDF /* SecondMVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB6927C25FE297B005EDEDF /* SecondMVPPresenter.swift */; };
+		2EB6928525FE29F0005EDEDF /* SecondMVPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB6928425FE29F0005EDEDF /* SecondMVPView.swift */; };
+		2EB6928A25FE2A03005EDEDF /* SecondMVPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB6928925FE2A03005EDEDF /* SecondMVPController.swift */; };
 		C259FA1CC9C41EA46C6636A3 /* Pods_MVPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A525427BD85CCC5BD12F6120 /* Pods_MVPTests.framework */; };
 		C37D511F386F0CA6C8492ED2 /* Pods_MVP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1EF879EA5E1EF722F9BB007 /* Pods_MVP.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +65,10 @@
 		2EB6922D25FD1C6A005EDEDF /* FirstMVPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMVPModel.swift; sourceTree = "<group>"; };
 		2EB6923225FD1E15005EDEDF /* FirstMVPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMVPView.swift; sourceTree = "<group>"; };
 		2EB6923D25FD2048005EDEDF /* FirstMVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMVPPresenter.swift; sourceTree = "<group>"; };
+		2EB6927725FE2938005EDEDF /* SecondMVPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMVPModel.swift; sourceTree = "<group>"; };
+		2EB6927C25FE297B005EDEDF /* SecondMVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMVPPresenter.swift; sourceTree = "<group>"; };
+		2EB6928425FE29F0005EDEDF /* SecondMVPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMVPView.swift; sourceTree = "<group>"; };
+		2EB6928925FE2A03005EDEDF /* SecondMVPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMVPController.swift; sourceTree = "<group>"; };
 		8ADE85BBFDFC324DB2D6F686 /* Pods-MVPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPTests.debug.xcconfig"; path = "Target Support Files/Pods-MVPTests/Pods-MVPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A525427BD85CCC5BD12F6120 /* Pods_MVPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE53CD89BE7F0F27DC2CB5ED /* Pods-MVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP.debug.xcconfig"; path = "Target Support Files/Pods-MVP/Pods-MVP.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				2EB6921B25FCF2F9005EDEDF /* FirstMVP */,
+				2EB6927225FE28D1005EDEDF /* SecondMVP */,
 				2E52BDEA25DEDA77008EB525 /* AppDelegate.swift */,
 				2E52BDEC25DEDA77008EB525 /* SceneDelegate.swift */,
 				2E52BDEE25DEDA77008EB525 /* ViewController.swift */,
@@ -184,6 +193,49 @@
 				2EB6922D25FD1C6A005EDEDF /* FirstMVPModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2EB6927225FE28D1005EDEDF /* SecondMVP */ = {
+			isa = PBXGroup;
+			children = (
+				2EB6927525FE2905005EDEDF /* Controller */,
+				2EB6927425FE28FF005EDEDF /* View */,
+				2EB6927625FE290D005EDEDF /* Presenter */,
+				2EB6927325FE28F8005EDEDF /* Model */,
+			);
+			path = SecondMVP;
+			sourceTree = "<group>";
+		};
+		2EB6927325FE28F8005EDEDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EB6927725FE2938005EDEDF /* SecondMVPModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2EB6927425FE28FF005EDEDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2EB6928425FE29F0005EDEDF /* SecondMVPView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2EB6927525FE2905005EDEDF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2EB6928925FE2A03005EDEDF /* SecondMVPController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2EB6927625FE290D005EDEDF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2EB6927C25FE297B005EDEDF /* SecondMVPPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		D256B6A82C0CAB22BEDC2CDC /* Pods */ = {
@@ -451,8 +503,12 @@
 			files = (
 				2EB6923325FD1E15005EDEDF /* FirstMVPView.swift in Sources */,
 				2E52BDEF25DEDA77008EB525 /* ViewController.swift in Sources */,
+				2EB6927D25FE297B005EDEDF /* SecondMVPPresenter.swift in Sources */,
 				2E52BDEB25DEDA77008EB525 /* AppDelegate.swift in Sources */,
 				2EB6923E25FD2048005EDEDF /* FirstMVPPresenter.swift in Sources */,
+				2EB6928A25FE2A03005EDEDF /* SecondMVPController.swift in Sources */,
+				2EB6928525FE29F0005EDEDF /* SecondMVPView.swift in Sources */,
+				2EB6927825FE2938005EDEDF /* SecondMVPModel.swift in Sources */,
 				2EB6922E25FD1C6A005EDEDF /* FirstMVPModel.swift in Sources */,
 				2E52BDED25DEDA77008EB525 /* SceneDelegate.swift in Sources */,
 			);

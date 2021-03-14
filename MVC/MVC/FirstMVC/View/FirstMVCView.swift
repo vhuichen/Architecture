@@ -9,21 +9,25 @@
 import UIKit
 import KVOController
 
-protocol FirstMVCViewDelegate {
+protocol FirstMVCViewDelegate : NSObject {
     func textFieldCommit(_ value: String?);
 }
 
 //MARK: -
 class FirstMVCView: UIView {
-    let titleLabel = UILabel()
-    let textField = UITextField()
-    let commitButtom = UIButton()
-    let valueLabel = UILabel()
+    private let titleLabel = UILabel()
+    private let textField = UITextField()
+    private let commitButtom = UIButton()
+    private let valueLabel = UILabel()
     
-    var delegate: FirstMVCViewDelegate?
+    weak var delegate: FirstMVCViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupUI()
+    }
+    
+    func setupUI() {
         self.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
         
         addSubview(titleLabel)

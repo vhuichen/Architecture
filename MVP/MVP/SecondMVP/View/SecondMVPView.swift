@@ -1,28 +1,33 @@
 //
-//  SecondMVCView.swift
-//  MVC
+//  SecondMVPView.swift
+//  MVP
 //
-//  Created by vchan on 2021/2/21.
+//  Created by vchan on 2021/3/14.
 //  Copyright © 2021 vhuichen. All rights reserved.
 //
 
 import UIKit
 
-protocol SecondMVCViewDelegate : NSObject {
-    func textFieldCommit(_ value: String?);
+protocol SecondMVPViewDelegate : NSObject {
+    func textFieldCommit(_ value: String?)
+}
+
+protocol SecondMVPViewProtocol : NSObject {
+    func setTitle(_ title: String?)
+    func setContent(_ content: String?)
 }
 
 //MARK: -
-class SecondMVCView: UIView {
+class SecondMVPView: UIView {
     let titleLabel = UILabel()
-    let textField = UITextField()
-    let commitButtom = UIButton()
+    private let textField = UITextField()
+    private let commitButtom = UIButton()
     let valueLabel = UILabel()
     
-    weak var delegate: SecondMVCViewDelegate?
+    var delegate: SecondMVPViewDelegate?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init() {
+        super.init(frame: CGRect())
         setupUI()
     }
     
